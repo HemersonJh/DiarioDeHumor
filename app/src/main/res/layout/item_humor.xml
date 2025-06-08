@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="12dp"
+    android:orientation="horizontal"
+    android:background="#FFF3E0">
+
+    <ImageView
+        android:id="@+id/imgEmoji"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginRight="16dp"
+        android:src="@drawable/emoji_feliz" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/txtData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="08/06/2025"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtAnotacao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Foi um bom dia!" />
+    </LinearLayout>
+</LinearLayout>

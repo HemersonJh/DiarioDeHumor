@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center_horizontal"
+    android:background="#FFF8E1"
+    android:weightSum="1">
+
+
+    <TextView
+        android:id="@+id/txtPergunta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Como você está se sentindo hoje?"
+        android:textSize="20sp"
+        android:textColor="#333"
+        android:layout_marginBottom="20dp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <ImageButton
+            android:id="@+id/btnFeliz"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/emoji_feliz"
+            android:background="@android:color/transparent"
+            android:contentDescription="Feliz"/>
+
+        <ImageButton
+            android:id="@+id/btnTriste"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/emoji_triste"
+            android:background="@android:color/transparent"
+            android:layout_marginLeft="20dp"
+            android:contentDescription="Triste"/>
+
+        <ImageButton
+            android:id="@+id/btnAnsioso"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/emoji_ansioso"
+            android:background="@android:color/transparent"
+            android:layout_marginLeft="20dp"
+            android:contentDescription="Ansioso"/>
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/edtAnotacao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Quer escrever algo sobre o seu dia?"
+        android:layout_marginTop="20dp"
+        android:background="@android:drawable/editbox_background"
+        android:padding="10dp"/>
+
+    <Button
+        android:id="@+id/btnSalvar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Salvar Humor"
+        android:textSize="18sp"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="#FFB300"
+        android:textColor="#fff"
+
+
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"/>
+
+</LinearLayout>
