@@ -1,6 +1,7 @@
 package com.example.diariodehumor;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -61,10 +62,18 @@ public class MainActivity extends AppCompatActivity {
 
     private void selecionarHumor(String humor) {
         humorSelecionado = humor;
-        btnFeliz.setAlpha(humor.equals("feliz") ? 1f : 0.5f);
-        btnTriste.setAlpha(humor.equals("triste") ? 1f : 0.5f);
-        btnAnsioso.setAlpha(humor.equals("ansioso") ? 1f : 0.5f);
-    }
+
+        btnFeliz.setBackground("feliz".equals(humor) ?
+                ContextCompat.getDrawable(this, R.drawable.bg_selected) : null);
+        btnFeliz.setBackground("triste".equals(humor) ?
+                ContextCompat.getDrawable(this, R.drawable.bg_selected) : null);
+        btnFeliz.setBackground("ansioso".equals(humor) ?
+                ContextCompat.getDrawable(this, R.drawable.bg_selected) : null);
+
+//        btnTriste.setBackground("triste".equals(humor) ? getDrawable(R.drawable.bg_selected) : null);
+//        btnAnsioso.setBackground("ansioso".equals(humor) ? getDrawable(R.drawable.bg_selected) : null);
+}
+
 
     private void salvarHumor() {
         String anotacao = edtAnotacao.getText().toString();
