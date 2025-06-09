@@ -29,7 +29,7 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:src="@drawable/emoji_feliz"
-
+            android:background="@android:color/transparent"
             android:contentDescription="Feliz"/>
 
         <ImageButton
@@ -37,6 +37,7 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:src="@drawable/emoji_triste"
+            android:background="@android:color/transparent"
 
             android:layout_marginLeft="20dp"
             android:contentDescription="Triste"/>
@@ -46,6 +47,7 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:src="@drawable/emoji_ansioso"
+            android:background="@android:color/transparent"
 
             android:layout_marginLeft="20dp"
             android:contentDescription="Ansioso"/>

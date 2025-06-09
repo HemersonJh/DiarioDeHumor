@@ -63,16 +63,23 @@ public class MainActivity extends AppCompatActivity {
     private void selecionarHumor(String humor) {
         humorSelecionado = humor;
 
-        btnFeliz.setBackground("feliz".equals(humor) ?
-                ContextCompat.getDrawable(this, R.drawable.bg_selected) : null);
-        btnFeliz.setBackground("triste".equals(humor) ?
-                ContextCompat.getDrawable(this, R.drawable.bg_selected) : null);
-        btnFeliz.setBackground("ansioso".equals(humor) ?
-                ContextCompat.getDrawable(this, R.drawable.bg_selected) : null);
+        btnFeliz.setBackground(null);
+        btnTriste.setBackground(null);
+        btnAnsioso.setBackground(null);
 
-//        btnTriste.setBackground("triste".equals(humor) ? getDrawable(R.drawable.bg_selected) : null);
-//        btnAnsioso.setBackground("ansioso".equals(humor) ? getDrawable(R.drawable.bg_selected) : null);
-}
+        switch (humor) {
+            case "feliz":
+                btnFeliz.setBackground(ContextCompat.getDrawable(this, R.drawable.bg_selected));
+                break;
+            case "triste":
+                btnTriste.setBackground(ContextCompat.getDrawable(this, R.drawable.bg_selected));
+                break;
+            case "ansioso":
+                btnAnsioso.setBackground(ContextCompat.getDrawable(this, R.drawable.bg_selected));
+                break;
+        }
+    }
+
 
 
     private void salvarHumor() {
