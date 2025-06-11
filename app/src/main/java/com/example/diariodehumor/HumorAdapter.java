@@ -62,5 +62,6 @@ public class HumorAdapter extends RecyclerView.Adapter<HumorAdapter.HumorViewHol
             txtData = itemView.findViewById(R.id.txtData);
             txtAnotacao = itemView.findViewById(R.id.txtAnotacao);
         }
+
     }
 }

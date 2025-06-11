@@ -20,6 +20,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
+//Alunos: Dayse Sousa, Hemerson Jhonatan e Leonardo Nascimento
 public class MainActivity extends AppCompatActivity {
 
     private String humorSelecionado = null;
