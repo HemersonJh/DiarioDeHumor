@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -26,11 +27,16 @@ public class MainActivity extends AppCompatActivity {
     private AppDatabase db;
     private RecyclerView recyclerView;
     private ImageButton btnFeliz, btnTriste, btnAnsioso;
-
+    private FrameLayout containerFeliz, containerTriste, containerAnsioso;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        containerFeliz = findViewById(R.id.containerFeliz);
+        containerTriste = findViewById(R.id.containerTriste);
+        containerAnsioso = findViewById(R.id.containerAnsioso);
 
         edtAnotacao = findViewById(R.id.edtAnotacao);
         btnFeliz = findViewById(R.id.btnFeliz);
@@ -63,22 +69,30 @@ public class MainActivity extends AppCompatActivity {
     private void selecionarHumor(String humor) {
         humorSelecionado = humor;
 
-        btnFeliz.setBackground(null);
-        btnTriste.setBackground(null);
-        btnAnsioso.setBackground(null);
 
+        // Remove a borda de todos
+        containerFeliz.setBackgroundResource(0);
+        containerTriste.setBackgroundResource(0);
+        containerAnsioso.setBackgroundResource(0);
+
+        containerFeliz.setBackgroundResource(android.R.color.transparent);
+        containerTriste.setBackgroundResource(android.R.color.transparent);
+        containerAnsioso.setBackgroundResource(android.R.color.transparent);
+
+        if (humor == null) return;
         switch (humor) {
             case "feliz":
-                btnFeliz.setBackground(ContextCompat.getDrawable(this, R.drawable.bg_selected));
+                containerFeliz.setBackgroundResource(R.drawable.bg_selected);
                 break;
             case "triste":
-                btnTriste.setBackground(ContextCompat.getDrawable(this, R.drawable.bg_selected));
+                containerTriste.setBackgroundResource(R.drawable.bg_selected);
                 break;
             case "ansioso":
-                btnAnsioso.setBackground(ContextCompat.getDrawable(this, R.drawable.bg_selected));
+                containerAnsioso.setBackgroundResource(R.drawable.bg_selected);
                 break;
         }
     }
+
 
 
 

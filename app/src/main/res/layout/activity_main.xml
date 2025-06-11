@@ -18,42 +18,64 @@
         android:textColor="#333"
         android:layout_marginBottom="20dp"/>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
 
-        <ImageButton
-            android:id="@+id/btnFeliz"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:src="@drawable/emoji_feliz"
-            android:background="@android:color/transparent"
-            android:contentDescription="Feliz"/>
+            <FrameLayout
+                android:id="@+id/containerFeliz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="4dp">
 
-        <ImageButton
-            android:id="@+id/btnTriste"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:src="@drawable/emoji_triste"
-            android:background="@android:color/transparent"
+                <ImageButton
+                    android:id="@+id/btnFeliz"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/emoji_feliz"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="Feliz"/>
+            </FrameLayout>
 
-            android:layout_marginLeft="20dp"
-            android:contentDescription="Triste"/>
+            <FrameLayout
+                android:id="@+id/containerTriste"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:padding="4dp">
 
-        <ImageButton
-            android:id="@+id/btnAnsioso"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:src="@drawable/emoji_ansioso"
-            android:background="@android:color/transparent"
 
-            android:layout_marginLeft="20dp"
-            android:contentDescription="Ansioso"/>
-    </LinearLayout>
+                <ImageButton
+                    android:id="@+id/btnTriste"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/emoji_triste"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="Triste"/>
+            </FrameLayout>
 
-    <EditText
+            <FrameLayout
+                android:id="@+id/containerAnsioso"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:padding="4dp">
+
+                <ImageButton
+                    android:id="@+id/btnAnsioso"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/emoji_ansioso"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="Ansioso"/>
+            </FrameLayout>
+
+        </LinearLayout>
+
+
+        <EditText
         android:id="@+id/edtAnotacao"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
