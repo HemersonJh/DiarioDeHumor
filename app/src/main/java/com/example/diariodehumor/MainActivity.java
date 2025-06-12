@@ -7,12 +7,14 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
@@ -34,6 +36,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        TextView txtSaudacao;
+        SharedPreferences prefs = getSharedPreferences("usuario", MODE_PRIVATE);
+        String nomeUsuario = prefs.getString("nome", "Usuário");
+        txtSaudacao = findViewById(R.id.txtSaudacao);
+        txtSaudacao.setText("Olá " + nomeUsuario + ", como está seu dia?");
 
         containerFeliz = findViewById(R.id.containerFeliz);
         containerTriste = findViewById(R.id.containerTriste);
